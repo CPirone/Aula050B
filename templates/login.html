@@ -4,18 +4,24 @@
 {% block title %}Flasky{% endblock %}
 
 {% block page_content %}
-<div class="container text-center"> <!-- Adicione a classe text-center ao container -->
-    <div class="row">
-        <div class="col-md-6 offset-md-3"> <!-- Coloque a coluna no centro da tela -->
-            <form class="form-signin custom-form">
-                <h1 Login</h1>
-                <input type="email" id="inputEmail" class="form-control custom-input" placeholder="Usuário ou e-mail" required autofocus>
-                <input type="password" id="inputPassword" class="form-control custom-input" placeholder="Informe a sua senha" required>
-                <button class="btn btn-lg btn-primary btn-block custom-btn" type="submit">Enviar</button>
+
+<div class="container-fluid"> <!-- Container fluid para ocupar toda a largura da tela -->
+    <div class="row justify-content-center align-items-center" style="height: 100vh;"> <!-- Centraliza horizontal e verticalmente -->
+        <div class="col-md-3"> <!-- Define a largura do formulário em 25% da largura da tela em dispositivos de médio porte -->
+            <form action="/login" method="post" class="form-signin">
+                <input id="csrf_token" name="csrf_token" type="hidden" value="ImUyZGJjZGNjNmViNmUwNDJiNTdiMjU3Yjg4NTEzYjkwN2RlMTA4ZmYi.ZfjR3Q.ED7bkk-anc2ozmAf1d-sVl2hpmk">
+                <h1 class="h3 mb-3 font-weight-normal">Login:</h1>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Usuário ou e-mail" required="" autofocus="" name="nome">
+                <br>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Informe a sua senha" required="" name="senha">
+                <br>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" style="margin-top: 10px;">Enviar</button> <!-- Adicione margin-top: 10px; -->
             </form>
         </div>
     </div>
 </div>
+
+<br>
 
 <p>The local date and time is {{ moment(current_time).format('LLL') }}.</p>
 <p>That was {{ moment(current_time).fromNow(refresh=True) }}.</p>

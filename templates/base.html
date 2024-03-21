@@ -2,16 +2,11 @@
 
 {% block title %}Flasky{% endblock %}
 
-
-
+{% block head %}
+{{ super() }}
 <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
 <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
-<!-- Bootstrap core CSS -->
-<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom styles for this template -->
-<link href="signin.css" rel="stylesheet">
-
+{% endblock %}
 
 {% block navbar %}
 <div class="navbar navbar-inverse" role="navigation">
